@@ -1,0 +1,54 @@
+.app2{
+  display: flex;
+  }
+.button_radio{
+  border: 2px solid purple;
+width:150px;
+margin: 10px;
+padding: 10px;
+display: flex;
+justify-content: center;
+height: 20px;
+}
+.img{
+  margin-left: 20px;
+}
+.itemList{
+  list-style: none;
+}
+.list{
+  border: 2px solid purple;
+  width: 300px;
+  padding: 0;
+}
+.title{
+  text-transform: capitalize;
+  color:blue;
+  font-size: 16px;
+}
+.text{
+  text-transform: capitalize;
+}
+.div_container{
+  border-bottom:  2px solid purple;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.div__item{
+  margin: 0 auto;
+}
+.div__ciudad{
+  text-align: center;
+  border: 2px solid blue;
+  width: 200px;
+}
+.lista__ciudad{
+  list-style: none;
+}
+.title__cuidad{
+    font-size: 16px;
+    margin: 0
+}
