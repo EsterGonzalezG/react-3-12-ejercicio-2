@@ -2,7 +2,6 @@
   display: flex;
   }
 .button_radio{
-  border: 2px solid purple;
 width:150px;
 margin: 10px;
 padding: 10px;
@@ -40,11 +39,7 @@ height: 20px;
 .div__item{
   margin: 0 auto;
 }
-.div__ciudad{
-  text-align: center;
-  border: 2px solid blue;
-  width: 200px;
-}
+
 .lista__ciudad{
   list-style: none;
 }

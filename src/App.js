@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Link, Route, Switch } from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import PersonDetail from './components/PersonDetail';
 class App extends Component {
@@ -11,21 +11,24 @@ class App extends Component {
       filtroCity:[],
       persons:[]
     }
-    this.searchFechNewPeople();
-
     this.filtrarSexo = this.filtrarSexo.bind(this);
     this.filtrarCiudad = this.filtrarCiudad.bind(this);
   }
-
+  componentDidMount() {
+    this.searchFechNewPeople();
+  }
   searchFechNewPeople(){
     fetch('https://randomuser.me/api/?results=50')
     .then(response=> {
       return response.json();
     })
     .then(json => {
-      const person = json.results;
+      let persons = [];
+      for (let i = 0; i < json.results.length; i++) {
+        persons[i] = {...json.results[i],id:i};
+      }
       this.setState({
-        persons: person
+        persons: persons
       });
     });
   }
@@ -40,7 +43,6 @@ class App extends Component {
     if (arraySexo.includes(filtro) === true) {
       let positionToRemove = arraySexo.indexOf(filtro);
       arraySexo.splice(positionToRemove, 1);
-
       this.setState({
         filtroCity:arraySexo
       });
@@ -50,10 +52,7 @@ class App extends Component {
       this.setState({
         filtroCity:filtro
       });
-      console.log(arraySexo);
     }
-
-
   }
 
 

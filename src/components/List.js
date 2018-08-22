@@ -13,14 +13,17 @@ class List extends React.Component {
                   return persona.gender.toLocaleLowerCase().includes(this.props.filtroGender.toLocaleLowerCase());
                 }
             })
-
             .filter(ciudad=>{
-              return ciudad.location.city.includes(this.props.filtroCity);
+              if(this.props.filtroCity===""){
+                return true;
+              }else{
+                return ciudad.location.city.includes(this.props.filtroCity);
+              }
+              
             })
-
             .map((item,index)=>{return(
               <li className="itemList" key={index}>
-                <Link to={`/person/${index}`}>
+                <Link to={`/person/${item.id}`}>
                 <ItemList persons={item} />
                 </Link>
               </li>
